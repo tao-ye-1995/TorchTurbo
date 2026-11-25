@@ -1,0 +1,10 @@
+Copyright 2026 FlagOS Contributors
+
+Triton K1/K2, orchestration and packaging contributions use Apache License 2.0.
+K1/K2 are copied unchanged from kda-hybrid.
+K3 contains the current compact high-precision Triton-derived IR and compiled
+NPU kernels. It does not include the AscendC K3 operator or host binding.
+The linked bitcode contains a CANN fixpipe helper from the existing K3 analysis;
+CANN/BSD upstream notices and PyTorch notices are retained in LICENSES.
+CANN, torch, torch_npu and FlagTree are environment dependencies.
+The IR provenance and build metadata record the original helper and compiler hashes.

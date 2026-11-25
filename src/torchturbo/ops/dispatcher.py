@@ -54,6 +54,7 @@ class OpDispatcher:
         self._candidate_impl_cache: dict[
             tuple[str, str, str | None], _Candidate
         ] = {}
+        self._input_fallback_cache: dict[str, tuple[OpImpl, ...]] = {}
         self._unresolved_ops: dict[str, str] = {}
         self._configure()
 
@@ -290,7 +291,43 @@ class OpDispatcher:
             else self._overrides.get(op_name)
         )
         impl_obj = self._candidate_impl(op_name, device, impl=selected_impl)
-        return impl_obj(*args, **kwargs)
+        if impl_obj.supports(*args, **kwargs):
+            return impl_obj(*args, **kwargs)
+        if selected_impl is not None:
+            raise RuntimeError(
+                f"Implementation {selected_impl!r} for op {op_name!r} "
+                "does not support these inputs."
+            )
+
+        # Cache availability, but recheck tensor eligibility on every call.
+        # Never cache a lower-ranked selection by op name alone: a later
+        # call can have a different shape or gate configuration.
+        candidates = self._input_fallback_cache.get(op_name)
+        if candidates is None:
+            specs = self.registry.list(
+                spec_filter=lambda spec: (
+                    spec.op_name == op_name
+                    and (not spec.devices or device in spec.devices)
+                    and (
+                        self._default_policy == OpPolicy.AUTO
+                        or spec.kind.value == self._default_policy.value
+                    )
+                )
+            )
+            alternatives = []
+            for spec in specs:
+                candidate = self._load_impl(spec)
+                if candidate is not impl_obj and candidate.available():
+                    alternatives.append(candidate)
+            candidates = tuple(alternatives)
+            self._input_fallback_cache[op_name] = candidates
+        for candidate in candidates:
+            if candidate.supports(*args, **kwargs):
+                return candidate(*args, **kwargs)
+        raise RuntimeError(
+            f"No implementation supports inputs for op={op_name!r}, "
+            f"device={device.value}, policy={self._default_policy.value}."
+        )
 
     def rms_norm(
         self,

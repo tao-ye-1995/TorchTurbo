@@ -23,3 +23,7 @@ dev = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/torchturbo"]
+
+[tool.setuptools.package-data]
+"torchturbo.ops.providers.npu._kda_hybrid" = ["_native/**/*", "LICENSE", "NOTICE", "LICENSES/*"]
+"torchturbo.ops.providers.npu._kda_triton" = ["_ir/manifest.json", "_ir/dynamic/*.npubin", "_ir/dynamic/*.json", "LICENSE", "NOTICE", "LICENSES/*"]

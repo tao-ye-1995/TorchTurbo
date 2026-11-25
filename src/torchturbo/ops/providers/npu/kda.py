@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from itertools import pairwise
-from typing import Any
+from typing import Any, ClassVar
 
 import torch
 
@@ -229,6 +229,7 @@ def ascendc_chunk_kda(
     safe_gate: bool = False,
     lower_bound: float | None = None,
     cu_seqlens: torch.Tensor | None = None,
+    _autograd_function: type[ChunkKDAFunction] = ChunkKDAFunction,
 ) -> tuple[torch.Tensor, torch.Tensor | None]:
     """Run KDA on [B,T,C] Q/K/V inputs and return time-major output.
 
@@ -274,7 +275,7 @@ def ascendc_chunk_kda(
         if cu_seqlens is not None:
             tensor = tensor.squeeze(0)
         inputs.append(tensor.contiguous())
-    output, final_state = ChunkKDAFunction.apply(
+    output, final_state = _autograd_function.apply(
         *inputs,
         g,
         beta,
@@ -300,6 +301,11 @@ def ascendc_chunk_kda(
     devices=(TurboDevice.NPU,),
 )
 class AscendCKDA(OpImpl):
+    autograd_function: ClassVar[type[ChunkKDAFunction]] = ChunkKDAFunction
+
+    def _prepare_execution(self) -> None:
+        """Prepare provider-specific resources before the forward call."""
+
     def available(self) -> bool:
         try:
             from fla_npu.ops.ascendc import (  # noqa: F401
@@ -332,6 +338,7 @@ class AscendCKDA(OpImpl):
         lower_bound: float | None = None,
         cu_seqlens: torch.Tensor | None = None,
     ) -> tuple[torch.Tensor, torch.Tensor | None]:
+        self._prepare_execution()
         return ascendc_chunk_kda(
             q=q,
             k=k,
@@ -349,4 +356,5 @@ class AscendCKDA(OpImpl):
             safe_gate=safe_gate,
             lower_bound=lower_bound,
             cu_seqlens=cu_seqlens,
+            _autograd_function=self.autograd_function,
         )

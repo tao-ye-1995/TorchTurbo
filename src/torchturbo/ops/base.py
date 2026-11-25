@@ -55,6 +55,15 @@ class OpImpl(ABC):
     def available(self) -> bool:
         return True
 
+    def supports(self, *args: Any, **kwargs: Any) -> bool:
+        """Return whether this implementation accepts the current inputs.
+
+        The dispatcher checks this on every call, independently of cached
+        dependency availability. Providers with a restricted tensor contract
+        override this without running kernels or copying tensor data.
+        """
+        return True
+
     @abstractmethod
     def __call__(self, *args: Any, **kwargs: Any):
         raise NotImplementedError

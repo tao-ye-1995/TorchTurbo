@@ -1,0 +1,9 @@
+{
+  "target": "Ascend910_9382",
+  "cann_version": "9.1.0",
+  "compiler_version": "bishengir-compile 1.2.0 (/usr1/BiSheng/npuir-a3/bishengir 8796a8ac1508 2026-07-31) \nllvm 19.1.7 2430ab069eb1\nRelease build\n\n",
+  "triton_version": "3.5.1",
+  "workspace_bytes": 36175872,
+  "scale": 0.08838834764831845,
+  "lower_bound": -5.0
+}
