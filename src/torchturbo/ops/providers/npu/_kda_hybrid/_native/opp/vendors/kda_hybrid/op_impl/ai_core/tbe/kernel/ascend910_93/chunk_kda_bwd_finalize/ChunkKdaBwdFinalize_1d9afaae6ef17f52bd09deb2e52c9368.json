@@ -1,0 +1,435 @@
+{
+ "binFileName": "ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "MIX",
+ "intercoreSync": 1,
+ "kernelName": "ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 96,
+ "parameters": [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "sha256": "5653e744be979c9d4b4f533cfcd87535b10c74194f4dccef66fa94e3668f7ee2",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "tilingKey": 101,
+   "kernelType": "MIX_AIC",
+   "crossCoreSync": 1,
+   "taskRation": "1:2",
+   "kernelName": "ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368_101"
+  },
+  {
+   "tilingKey": 102,
+   "kernelType": "MIX_AIC",
+   "crossCoreSync": 1,
+   "taskRation": "1:2",
+   "kernelName": "ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368_102"
+  }
+ ],
+ "taskRation": "tilingKey",
+ "optionalInputMode": "gen_placeholder",
+ "optionalOutputMode": "gen_placeholder",
+ "supportSuperKernel": 1,
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+   "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+   "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+   "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2"
+  ],
+  "optionalInputMode": "gen_placeholder",
+  "optionalOutputMode": "gen_placeholder",
+  "staticKey": "4c3d6138094d3a619ff9d6c92811ba73fcf884141ddfab00ab665db841b66ce4,8f5d886207005a828fbdc9c44cce67ff3311ab33e6496d9efd35b9276bbe44a8",
+  "inputs": [
+   {
+    "name": "q",
+    "index": 0,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "k",
+    "index": 1,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "v",
+    "index": 2,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "gk",
+    "index": 3,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "raw_g",
+    "index": 4,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "beta",
+    "index": 5,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "a_log",
+    "index": 6,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dt_bias",
+    "index": 7,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "akk",
+    "index": 8,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "v_new",
+    "index": 9,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "h",
+    "index": 10,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dh",
+    "index": 11,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dv_scan",
+    "index": 12,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "d_aqk",
+    "index": 13,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dq_raw",
+    "index": 14,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "q_rstd",
+    "index": 15,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "optional",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "k_rstd",
+    "index": 16,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "optional",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "cu_seqlens",
+    "index": 17,
+    "dtype": "int64",
+    "format": "ND",
+    "paramType": "optional",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "chunk_indices",
+    "index": 18,
+    "dtype": "int64",
+    "format": "ND",
+    "paramType": "optional",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "dq",
+    "index": 0,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dk",
+    "index": 1,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dv",
+    "index": 2,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "d_beta",
+    "index": 3,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "d_g",
+    "index": 4,
+    "dtype": "bfloat16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "d_a_log",
+    "index": 5,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "d_dt_bias",
+    "index": 6,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "attrs": [
+   {
+    "name": "scale",
+    "dtype": "float",
+    "value": 0.0
+   },
+   {
+    "name": "lower_bound",
+    "dtype": "float",
+    "value": 0.0
+   },
+   {
+    "name": "chunk_size",
+    "dtype": "int",
+    "value": 0
+   },
+   {
+    "name": "safe_gate",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "use_gate_in_kernel",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "use_exp2",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "state_v_first",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "use_beta_sigmoid_in_kernel",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "allow_neg_eigval",
+    "dtype": "bool",
+    "value": false
+   },
+   {
+    "name": "output_layout",
+    "dtype": "str",
+    "value": ""
+   },
+   {
+    "name": "model_layout",
+    "dtype": "str",
+    "value": ""
+   }
+  ],
+  "opMode": "dynamic",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend910_93/bin/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368.json"
+}

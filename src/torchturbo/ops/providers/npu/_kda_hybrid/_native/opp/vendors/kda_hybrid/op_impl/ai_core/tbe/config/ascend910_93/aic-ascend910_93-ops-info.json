@@ -1,0 +1,315 @@
+{
+  "ChunkKdaBwdFinalize": {
+    "aclnnSupport": {
+      "value": "support_aclnn"
+    },
+    "attr": {
+      "list": "scale,lower_bound,chunk_size,safe_gate,use_gate_in_kernel,use_exp2,state_v_first,use_beta_sigmoid_in_kernel,allow_neg_eigval,output_layout,model_layout"
+    },
+    "attr_allow_neg_eigval": {
+      "defaultValue": "false",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "attr_chunk_size": {
+      "defaultValue": "64",
+      "paramType": "optional",
+      "type": "int",
+      "value": "all"
+    },
+    "attr_lower_bound": {
+      "defaultValue": "-5",
+      "paramType": "optional",
+      "type": "float",
+      "value": "all"
+    },
+    "attr_model_layout": {
+      "defaultValue": "",
+      "paramType": "optional",
+      "type": "str",
+      "value": "all"
+    },
+    "attr_output_layout": {
+      "defaultValue": "BNSD",
+      "paramType": "optional",
+      "type": "str",
+      "value": "all"
+    },
+    "attr_safe_gate": {
+      "defaultValue": "true",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "attr_scale": {
+      "paramType": "required",
+      "type": "float",
+      "value": "all"
+    },
+    "attr_state_v_first": {
+      "defaultValue": "false",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "attr_use_beta_sigmoid_in_kernel": {
+      "defaultValue": "false",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "attr_use_exp2": {
+      "defaultValue": "true",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "attr_use_gate_in_kernel": {
+      "defaultValue": "true",
+      "paramType": "optional",
+      "type": "bool",
+      "value": "all"
+    },
+    "coreType": {
+      "value": "AiCore"
+    },
+    "dynamicCompileStatic": {
+      "flag": "true"
+    },
+    "dynamicFormat": {
+      "flag": "true"
+    },
+    "dynamicRankSupport": {
+      "flag": "true"
+    },
+    "dynamicShapeSupport": {
+      "flag": "true"
+    },
+    "input0": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "q",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input1": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "k",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input10": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "h",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input11": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dh",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input12": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dv_scan",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input13": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "d_aqk",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input14": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dq_raw",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input15": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "q_rstd",
+      "paramType": "optional",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input16": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "k_rstd",
+      "paramType": "optional",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input17": {
+      "dtype": "int64,int64,int64,int64,int64,int64",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "cu_seqlens",
+      "paramType": "optional",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND",
+      "valueDepend": "optional"
+    },
+    "input18": {
+      "dtype": "int64,int64,int64,int64,int64,int64",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "chunk_indices",
+      "paramType": "optional",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND",
+      "valueDepend": "optional"
+    },
+    "input2": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "v",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input3": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "gk",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input4": {
+      "dtype": "bfloat16,float32,bfloat16,float32,bfloat16,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "raw_g",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input5": {
+      "dtype": "bfloat16,bfloat16,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "beta",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input6": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "a_log",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input7": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dt_bias",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input8": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "akk",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "input9": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "v_new",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "needCheckSupport": {
+      "flag": "false"
+    },
+    "opFile": {
+      "value": "chunk_kda_bwd_finalize"
+    },
+    "opInterface": {
+      "value": "chunk_kda_bwd_finalize"
+    },
+    "output0": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dq",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output1": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dk",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output2": {
+      "dtype": "bfloat16,bfloat16,bfloat16,bfloat16,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "dv",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output3": {
+      "dtype": "bfloat16,bfloat16,float32,float32,bfloat16,bfloat16",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "d_beta",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output4": {
+      "dtype": "bfloat16,float32,bfloat16,float32,bfloat16,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "d_g",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output5": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "d_a_log",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "output6": {
+      "dtype": "float32,float32,float32,float32,float32,float32",
+      "format": "ND,ND,ND,ND,ND,ND",
+      "name": "d_dt_bias",
+      "paramType": "required",
+      "shape": "all",
+      "unknownshape_format": "ND,ND,ND,ND,ND,ND"
+    },
+    "prebuildPattern": {
+      "value": "Opaque"
+    },
+    "precision_reduce": {
+      "flag": "false"
+    }
+  }
+}

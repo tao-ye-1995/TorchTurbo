@@ -1,0 +1,279 @@
+{
+  "ChunkKdaBwdFinalize": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "optionalOutputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "q",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "k",
+          "index": 1,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "v",
+          "index": 2,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "gk",
+          "index": 3,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "raw_g",
+          "index": 4,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "beta",
+          "index": 5,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "a_log",
+          "index": 6,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dt_bias",
+          "index": 7,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "akk",
+          "index": 8,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "v_new",
+          "index": 9,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "h",
+          "index": 10,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dh",
+          "index": 11,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dv_scan",
+          "index": 12,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "d_aqk",
+          "index": 13,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dq_raw",
+          "index": 14,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "q_rstd",
+          "index": 15,
+          "paramType": "optional",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "k_rstd",
+          "index": 16,
+          "paramType": "optional",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "cu_seqlens",
+          "index": 17,
+          "paramType": "optional",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "chunk_indices",
+          "index": 18,
+          "paramType": "optional",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "dq",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dk",
+          "index": 1,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dv",
+          "index": 2,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "d_beta",
+          "index": 3,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "d_g",
+          "index": 4,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "d_a_log",
+          "index": 5,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "d_dt_bias",
+          "index": 6,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "attrs": [
+        {
+          "name": "scale"
+        },
+        {
+          "name": "lower_bound"
+        },
+        {
+          "name": "chunk_size"
+        },
+        {
+          "name": "safe_gate"
+        },
+        {
+          "name": "use_gate_in_kernel"
+        },
+        {
+          "name": "use_exp2"
+        },
+        {
+          "name": "state_v_first"
+        },
+        {
+          "name": "use_beta_sigmoid_in_kernel"
+        },
+        {
+          "name": "allow_neg_eigval"
+        },
+        {
+          "name": "output_layout"
+        },
+        {
+          "name": "model_layout"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_1181c73dcea061552261b95bcc31d3e6.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_1181c73dcea061552261b95bcc31d3e6.json"
+      },
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/0,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/0,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_19f387e7772e05c293f3990da642d659.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_19f387e7772e05c293f3990da642d659.json"
+      },
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_1d9afaae6ef17f52bd09deb2e52c9368.json"
+      },
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_68e9fc51f55c3cec6cbd76ec5b3c26b8.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_68e9fc51f55c3cec6cbd76ec5b3c26b8.json"
+      },
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/0,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/0,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/0,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/0,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/27,2/0,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_88123143e42e918538b0971cd93b56a0.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_88123143e42e918538b0971cd93b56a0.json"
+      },
+      {
+        "coreType": 0,
+        "simplifiedKey": [
+          "ChunkKdaBwdFinalize/d=0,p=1/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=0,p=0/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=1/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/27,2/0,2/0,2",
+          "ChunkKdaBwdFinalize/d=1,p=0/27,2/27,2/27,2/0,2/27,2/0,2/0,2/0,2/27,2/27,2/27,2/27,2/27,2/0,2/0,2/27,2/27,2/27,2/0,2/27,2/0,2/0,2"
+        ],
+        "multiKernelType": 1,
+        "binPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_d97dfd0b8f6c494d4a93d89f6db4c76b.o",
+        "jsonPath": "ascend910_93/chunk_kda_bwd_finalize/ChunkKdaBwdFinalize_d97dfd0b8f6c494d4a93d89f6db4c76b.json"
+      }
+    ]
+  }
+}

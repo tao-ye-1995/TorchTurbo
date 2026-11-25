@@ -1,0 +1,31 @@
+Copyright 2026 FlagOS Contributors
+
+The Triton K1/K2 implementation, hybrid orchestration, optimizations and
+packaging contributions are licensed under Apache License 2.0 (see LICENSE).
+
+The AscendC K3 Python adapter, C++ binding and launch runtime contain portions
+from flash-linear-attention-npu. Those upstream portions are licensed under
+the BSD 3-Clause License:
+  Copyright (c) 2026 Tianjin University
+See LICENSES/LICENSE_FLA_NPU for the complete upstream license notice and BSD terms.
+Changes in this package include the private operator namespace, environment
+configuration, library loading and integration with the hybrid pipeline.
+
+AscendC opapi/tiling/proto shared libraries and K3 device kernels are included
+unchanged from the verified fla_npu build. K3 device sources carry:
+  Copyright (c) 2026 Tianjin University, Ltd.
+  Licensed under the BSD 3-Clause License.
+
+The bundled shared libraries also contain CANN-adapted host components,
+including ChunkFwdH and ChunkGatedDeltaRuleFwd, whose upstream notices state:
+  Copyright (c) 2026 Tianjin University, Ltd.
+  CANN Open Software License Agreement Version 2.0.
+The CANN-adapted portions retain that license; its full text is included at
+LICENSES/CANN-Open-Software-License-Agreement-Version-2.0.txt.
+
+The private native binding uses unmodified PyTorch Stable ABI headers.
+Their upstream copyright and license notices are retained; see LICENSES/TORCH_LICENSE
+and LICENSES/TORCH_STABLE_ABI_LICENSE.
+
+CANN, torch, torch_npu and FlagTree are environment dependencies and are not
+redistributed as standalone packages by this project.
